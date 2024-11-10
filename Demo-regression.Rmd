@@ -1,0 +1,134 @@
+---
+title: "Régression"
+output:
+  html_document:
+    df_print: paged
+---
+
+# 07-Régression
+
+## Prémière partie du cours
+
+Installer des paquets si vous ne les avez pas
+
+```{r}
+packages <- c("tidyverse", "parsnip", "broom")
+for (pkg in packages)
+  if (!pkg %in% installed.packages()) {
+    install.packages(pkg)
+    }
+```
+
+Charger les paquets
+
+```{r}
+for (pkg in packages) library(pkg, character.only = T)
+```
+
+1.  Chargez la base de données « Paris paintings » et convertissez la variable school_pntg en facteur. Combien de niveaux y a-t-il dans school_pntg ?
+
+    ```{r}
+
+    ```
+
+    R:
+
+2.  Filtrer la variable school_pntg pour obtenir une base de données pour l'école française (F), enregistrer la base de données dans une nouvelle variable.
+
+    ```{r}
+
+    ```
+
+3.  Répétez le point 2 pour l'école néerlandaise/flamande (DL/F).
+
+    ```{r}
+
+    ```
+
+4.  Faites un graphique de chacun d'entre eux, en séparant les peintures des paysages et des portraits.
+
+    ```{r}
+
+    ```
+
+    Sellons vous quelle école avait des tailles plus diffèrent entre les peintures des portraits et des paysages?
+
+    R:
+
+------------------------------------------------------------------------
+
+## Deuxième partie du cours
+
+Installer des paquets si vous ne les avez pas
+
+```{r}
+packages <- c("openintro", "tidyverse", "parsnip" ,"broom")
+for (pkg in packages)
+  if (!pkg %in% installed.packages()) {
+    install.packages(pkg)
+    }
+```
+
+Charger les paquets
+
+```{r}
+for (pkg in packages) library(pkg, character.only = T)
+
+```
+
+La base de données avec laquelle nous allons travailler s'appelle « evals »..
+
+```{r}
+evals %>%
+  glimpse()
+```
+
+5.  Visualisez et décrivez la relation entre `score` et `bty_avg`. **Indice:** Voir la page d'aide de la fonction à l'adresse suivante: <http://ggplot2.tidyverse.org/reference/index.html>.
+
+    ```{marginfigure}
+
+
+    ```
+
+6.  Recréer le nuage de points de l'exercice 5, mais cette fois en utilisant `geom_jitter()`.
+
+    ```{r}
+
+    ```
+
+    Que signifie « jitter » ? Qu'est-ce qui était trompeur dans le nuage de points initial ?
+
+    R:
+
+7.  Recréer le nuage de points de l'exercice 5, et ajoutez la ligne de régression à ce tracé en couleur orange, l'ombrage pour l'incertitude de la ligne étant désactivé.Interpret the slope of the linear model in context of the data. Interpret the intercept of the linear model in context of the data. Comment on whether or not the intercept makes sense in this context.
+
+    ```{r}
+
+    ```
+
+    R:
+
+8.  Déterminez le $R^2$ du modèle et interprétez-le dans le contexte des données.
+
+    ```{r}
+
+    ```
+
+9.  Ajustez un nouveau modèle linéaire appelé `score_gender_fit` pour prédire la moyenne d'évaluation du professeur `score` en fonction du `genre` du professeur. Sur la base des résultats de la régression, écrivez le modèle linéaire et interprétez la pente et l'ordonnée à l'origine dans le contexte des données.
+
+    ```{r}
+    ```
+
+    Quelle est l'équation de la droite correspondant aux professeurs ? Quelle est-elle pour les professeures ?
+
+    R:
+
+10. Ajustez un nouveau modèle linéaire appelé `score_rank_fit` pour prédire la note moyenne d'évaluation du professeur `score` en fonction du `rank` du professeur. Sur la base des résultats de la régression, écrivez le modèle linéaire et interprétez les pentes et les ordonnées à l'origine dans le contexte des données.
+
+    ```{r}
+
+    ```
+
+    R:
+
+🧶 Knit
